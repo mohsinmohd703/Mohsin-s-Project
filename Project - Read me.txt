@@ -1,0 +1,258 @@
+Project started on 13th August 2023
+
+
+Instalations - Mozilla, google fonts, visual studio, git 
+
+Extensions - 
+-HTML CSS support - Scans the project for css files and gives auto completion when typing css class names
+-CSS peek - can navigate to css code 
+-prettier - to format the code (enable "format on save" option in settings)
+-highlight matching tag - highlights the opening and closing tag when clicked
+-todo highlight - will highlight the todo and fixme commands
+-git to deploy on the internet ( if you have so many chanegs in visual studio's source code, then delete locat git repo by typing " rm -fr .git" in the gitbash terminal )
+-download normalize.css from google and add the file in the css folder to help render the html consistantly (npm can also be used)-  In big projects you have to divide
+ the styles sheet in multiple files using the preprocessors like SAAS, LAAS, 
+- live server - 
+-initialize the repository from source code in visual studio code, select the folder and commit the already created files
+- extract the files from the link and install the fonts
+- change the units to pixels in photoshop to get the exact font, color, size of the elements
+
+
+NOTE :the lesser the elements the less time will be taken to dounwload the pgae, too many colors and fonts may increase the time
+- COLOUR PALETTE - Check colors needed from the photo and add it to the styles.css using the root command, then commit the 
+changes with a note from the source control.
+
+We are bottom up approach here. We are first creating the components first in css and later creating the html page. If we go top down approach we may get into layout issues and 
+troubleshooting them are time consuming. 
+
+
+
+- TYPOGRAPHY - search the fonts in the google fonts, select the fonts, copy and paste the links generated in the html file
+above the ref links, and add the font family in the styles.css file under body, add headings and paragraph in html file, then a
+add color to the headings in styles.css under h1, h2..
+- now set the headings font size in styls.css using the rem instead of pixels because if the user set default font size in the browser, our webpage wil not reflect the change
+1 rem = 10px,
+
+- html font size is always set to default 16px, if we set the font size to 62.5%, it will be 62.5 of 16 px. Add the html font size in styles.css
+- add font sizes in h1, h2, h3, body ( in body font size and line height)
+- add margin-bottom in h3 to give some space between the heading and the paragraph, set margin top as 0, and margin bottom for all heading as 1 rem 
+
+- Add media query screen for mobile view and set its fonts for body andd headings
+
+LINKS  - Add anchor in html file for the link. add properties in styles. css (font size, color, weight), add arrow, add hover affect, remove underlined link, 
+- add media screen for mobile screen, 
+- create a folder named components, and create a file inside it named links.html and copy paste the anchor link template from index.html. (to know what markup we need for this particular component)
+
+
+
+BADGES - use object oriented css second principle- separate structure with skin, 
+- create one class for the structure and the some other classes for skin (colors)
+- google dev tools will show single font file even if we have multiple fonts, so you request multiple fonts without increasing the size of the page
+
+
+LISTS - - create one class for the structure and the some other classes for skin (colors)
+-To add the ticks beside the list, create folder called images, drag and drop tick image from the images folder(zip mosh given) into the images folder in the project 
+- create classes for ticks
+-copy and paste the lists template from the index.html file to components folder inside the lists.html file
+
+ICONS - In the icons folder (from the files that mosh gave) combine svg files using sprite generator from website " svgsprit.es". leave the files attributes.txt and logo.svg as there is some problems with these files. 
+-Drag and drop the files on the website page to combine. download the sprite by clicking the "Download Sprite" option. add the sprite file into images folder in VS studio. 
+-XML is better than html as they have limited elements. We can use XML to define our elements. 
+-When you go at the bottom of the bottom section of the svg webpage, you'll find codes as "<svg class ..<use....</svg>. copy one part and paste it in the html file.  -
+-With an "use" element you can use an svg defined somewhere else. 
+-create sizing in css , create classes .icon, .icon--primary. Now wrap the class in html with span. 
+- create new class in styles.css as .icon-container . Width and height in the .icon-container class will have no affect as span is a inline element and height and
+ Width will not have any affect on  it. in display in container class use in-line border instead of just block so that we dont break the line. Use flex instead of block to have 
+ the icon in the middle.
+ - Add a new file in components as icons.html and cut/paste the code from html to the icons.html file. Commit to the repo. 
+
+ BUTTONS - 
+  
+-create .btn in html to test the code created in css
+-create .btn , .btn--primary, .btn--secondary, btn--accent in styles.css . Add hover affect on the classes (eg- .btn--primary:hover{..}). 
+-create .btn--block in styles.css
+-to solve the sizing problem we will define a rule in the styles.css file on the top of the page using the universal selector. under "root" ("*,*::after, *before "...etc)
+- define the media query using screens , commit to the repo
+
+
+INPUTS - 
+
+-example of an input components are search bars. 
+
+-create classes .input, ::placeholder, @media  in styles.css
+
+-INPUT GROUPS - 
+
+-Adding button in the input component (eg . search button)
+-create a div class in html to test the styles
+-create .input-group  in styles.css
+-define a new color for border "--color-border" and for radius in input class "--border-radius" in root on the top
+-create  .input-group .input, .input-group .btn,   in styles.css
+-You can also put icon intead of button, try putting the icon template that we saved in components named icons.html in the html file in place of button code
+- store the template in the components and commit to the repo
+
+CARDS - 
+
+-make div and header in html to test. try with inline styles but dont use it in production, inline styles are bad
+-create .card, .card , .card__header, card__body, .card--primary, .card--secondary, .card--primary .card__header, .card--secondary .card__header in styles.css
+
+PLANS (continuation of CARDS) -
+
+-wrap the card component from the previous html code with class plan. 
+-create .plan_name, .plan__price, .plan__billing-cycle, .card--secondary .badge--secondary, .plan__description,   in styless.css
+-Add the "ul" class and button in the div of card__body in html 
+-create .plan .list__item and add the @media in styles.css 
+
+POPULAR BADGES
+
+-to implement popular badges insert image in the header and using abosolute positioning, position the image. its easier to style if you use sudo element in styles.css
+-create .plan--popular .card__header::before and .plan--popular .card__header, 
+
+MEDIA OBJECTS
+
+-create  div  with a class of media and media__image, media__body in html. add icon 
+-create .media, .media__title, .media__image, .media__body
+
+QUOTE 
+
+-create blockquote with class quote, footer,  in html
+-create .quote, add --color-body-darker in root at the top, .quote__text::before, .quoote__text::after, .quote__author,  in styles.css 
+-use the media.html template we saved in components and put it in footer in html 
+-create  .quote__organization, quote__line , @media in styles.css
+
+GRID 
+ 
+-create div grid in html 
+-create .grid, @media, .grid--1x2, .grid--1x3   in style.css
+
+TESTIMONIALS
+
+-create div with class card, get image names testimonial from images folder, div style, img class if testimonial in html
+-create .testimonial, .testimonial__image (to make the image responsive give width as 100% ),  .testimonial__image > img , .testimonial__image > .icon-container, 
+ .icon-container--accent , .icon--white , .icon--small,  in styles.css 
+-copy and paste the template file quote.html from components  
+-add @media with .testimonial . quote,and .testimonial . quote__author , .testimonial .quote  in styles.css
+
+
+CALLOUTS - 
+
+-create div with classes callout callout--primary, button,  in html
+- create .callout, .callout--primary, .callout__heading, .callout .btn, .callout__content, .btn--stretched, @media with .callout__content, .callout .btn, .callout .grid--1x2 in styles.css
+
+COLLAPSIBLES - 
+
+-Create div of class collapsible in html
+-create .callapsible, .collasibles__header, .collapsibles__heading, .callapsibles_chevron, .collapsibles__content,  .collapsible--expanded .collapsible__chevron,  .collapsible--expanded .collapsible__content  in styles.css
+-Add script in html and give source to the main.js file in the folder js given by Mosh
+
+BLOCKS - 
+ 
+Add section with class blocks, create another class with .block--dark in html
+create .block, .block__heading, .block--dark, .block--dark . block__heading , .block--skewed-right (to clip the image) , add --padding-vertical in .block instead of root at the top, .block--skewed-left, .container,    in styles.css
+
+NAVIGATION BARS -
+
+- use the logo.svg file given by mosh.
+- add a nav with class nav, add anchor source it to images, copy paste the icon.html file template, add ul with class list, li,   in html
+- create .nav,.nav__list, .nav__item, .nav_item >a , .nav_item >a :hover, .nav.collapsible--expanded .nav__toggler @media with .nav__toggler, .nav__list, .nav__item, .nav_brand,   in styles.css
+
+
+HERO -
+
+- add banner .png to the project 
+- add body with class block block--dark, block--skewed-left, container grid grid--1x2, hero_content, btn btn--accent btn--stretched, div with image/banner.png  in html
+- add changes to h3, .hero__tagline, .hero__image, .hero, @media screen with class .hero__content  in styles.css
+
+OPTIMIZING IMAGES - 
+
+- open image in photoshop, check the pixels, if you have alot of pixels browser will anyway changes when display as per the limit, so its better to put iamge in small pixels (570px), pixel density has to be considered as 
+modern screens have higher density and we'll have to provide 2x or 3x of the regular pixe, 570 x 2. change the pixel to 1140 and save as new file. create a new folder in images for 2x files. convert the images on WEBP online and save
+in the folder. Add all the files in images.
+- wrap image with picture element, add the image source,  in html. store the template in the components folder as hero.html 
+
+DOMAIN BLOCK - 
+
+- add body with section with class block container, block_header, copy and paste template input-groups.html from components after the header, now copy paste the icon.html template before the label, ul class with list-domain__prices
+  in html
+- add .btn .icon, .block-domain .input-group, .block-domain__prices, @media screen with .block-domain__prices  in styles. html
+
+PLANS BLOCK - 
+
+- add body with section class block container with class .grid.grid --1x3 and add plans.html from components, add src, 
+- add .block-plans .grid,.block-plans .card, .card--primary .badge--primary , .plan--popular, .plan:hover, .plan--popular:hover,    in styles.css
+
+FEATURES BLOCK - 
+
+- add body with article element around script src, place icons.html template from components and put inside div, h3, p, href,  wrap image with picture element after resizing the images  in html
+- add in .feature__heading, in  styles.css
+- resize images with photoshop and WEBP and add in the images folder
+- add  .feature, .feature__image, @media screen with .feature:nth-of-typer(even) . feature__content, .feature:first-of-type  in styles.css
+
+SHOWCASE BLOCK -
+
+open the ipad image from the files given by moosh, resize it with WEBP and add the image in the folder to use it. 
+- add body with section w class, header w class, h2, div with class, img src, script src, h2, add media.html from components,  in html 
+- add in .block--dark h1,.block--dark h2, .block--dark h3, .block-showcase__image, @media screen w .block-showcase__image, .block-showcase .grid, .block-showcase__image >img , ::selection,  styles.css
+
+
+TESTIMONIAL - 
+
+-add body with section w class, header w class, h2, p, div w container, testimonial.html template frpm components in html
+
+FOOTER - 
+
+- Add body w footer element, script src, add collapsible.html template from components inside div,   in html
+- add .footer, .footer__section, .footer .collapsible__heading, .footer__heading, .footer_brand, .footer__copyright, @media screens w .footer .collapsible__chevron , .footer .collapsible__content, .footer__brand, 
+.footer a, .footer a:hover,  .footer__section .list, .footer_brand img , in styles. css
+
+SEARCH ENGINE OPTIMIZATION - 
+ Add meta tags (give info to the search engines) with ogp element(refer to "ogp.me", displays when sharing links )
+
+HTML, CSS VALIDATION - 
+search html validator (validator.w3.org) and css validator (jigsaw.w3.org) in the browser and copy paste the code to verify
+
+PRODUCTION - used to reduce the sizes by combining the files, removing empty spaces, etc.
+-Use build tools like Webpack, Rollup or Parcel. We'll use parcel. Download node from "nodejs.org". In the vs code - go to View - terminal.
+-Type command - "node-v" , " ctrl+l ", NPM is required to install 3rd party libraries and dependencies. initialize NPM package, " npm init -y". 
+-Type "npm i -d parcel-bundler@1.12.4" (dont worry about warnings).  You will have a folder called node_modules, wherever we install a library through NPM, it will be stored in node_modules. you can find "parcel -bundler" in it.
+-We have alot of files in the node_modules folder, we dont need thm, so we'll create a file called ".gitignore"and we will list the files that we dont nee,d type "node_modules/", "dist/", ".cache". 
+-Now we'll open the parcel from terminal, but before that we'll make parcel global so that we dont have to type again and again, typer "sudo  i -g parcel-bundler", enter computer password. 
+-then type "parcel index.html", it will give take you to the live server. So you dont have to go to index.html and run code through live server.  
+-For production, we type "parcel build index.html". It may give error saying it can't understand "xlink" in index.html, open index.html, find the command and move "xlink" from the file wherever it is used.
+-type "parcel build index.html", it will build. You can see the files, you will now notice all the spaces are removed. 
+
+PUSHING TO GITHUB - 
+login into github Acc, click +, fill the requirements and create repository. Follow the instructions to push an existing repository from the command line. copy and paste the 3 lines in the terminal. 
+You can find the code in git account. Any changes made in the code from your computer, you need to commit it and type "git push" in the terminal and push the changes. 
+
+DEPLOY THE WEBSITE -
+Use netlify.com and create an account. Go to sites, click new site from git. select github, authorize netlify to talk to github, select the repos that you want netlify to access from github, select any repo that you want tp deploy, specify the basis build setting, put " parcel build index.html" in build command section, and "dist" in publish directory section, click deploy. You will receive a randon domain name,  but can change by clicking domain settings, 
+click options, edit site name, choose whatever domain you want. once build, you can typer the url address (domain name) you created in the browser to find your website. 
+- Now whenever you make changes in the code, commit it, push it to github, and you can see in the netlify, under the deploys section that there was a building. you can also see the latest commit comment. 
+Sometimes deploy fails, you can see the deploy log for reasons. 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
