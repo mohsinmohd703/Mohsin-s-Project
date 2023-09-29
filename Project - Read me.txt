@@ -211,7 +211,7 @@ SEARCH ENGINE OPTIMIZATION -
 HTML, CSS VALIDATION - 
 search html validator (validator.w3.org) and css validator (jigsaw.w3.org) in the browser and copy paste the code to verify
 
-PRODUCTION - used to reduce the sizes by combining the files, removing empty spaces, etc.
+PRODUCTION(READ PROBLEMS BELOW BEFORE PERFORMING THIS) - used to reduce the sizes by combining the files, removing empty spaces, etc.
 -Use build tools like Webpack, Rollup or Parcel. We'll use parcel. Download node from "nodejs.org". In the vs code - go to View - terminal.
 -Type command - "node-v" , " ctrl+l ", NPM is required to install 3rd party libraries and dependencies. initialize NPM package, " npm init -y". 
 -Type "npm i -d parcel-bundler@1.12.4" (dont worry about warnings).  You will have a folder called node_modules, wherever we install a library through NPM, it will be stored in node_modules. you can find "parcel -bundler" in it.
@@ -220,6 +220,23 @@ PRODUCTION - used to reduce the sizes by combining the files, removing empty spa
 -then type "parcel index.html", it will give take you to the live server. So you dont have to go to index.html and run code through live server.  
 -For production, we type "parcel build index.html". It may give error saying it can't understand "xlink" in index.html, open index.html, find the command and move "xlink" from the file wherever it is used.
 -type "parcel build index.html", it will build. You can see the files, you will now notice all the spaces are removed. 
+
+PROBLEMS DURING PRODUCTION - 
+1) "parcel-bundler" no longer works, use "parcel" instead 
+2) parcel index.html will give error,  in vs code, click terminal -> new - > at right lower corner click the arrow and select profiles arrow beside "+" and select "powershell (default)”. Also add the below code in settings.json (ctrl + shift + p and type "settings.json")
+
+“ "terminal.integrated.profiles.windows": {
+  "PowerShell": {
+    "source": "PowerShell",
+    "icon": "terminal-powershell",
+    "args": ["-ExecutionPolicy", "Bypass"]
+  }
+},
+"terminal.integrated.defaultProfile.windows": "PowerShell",
+“
+
+3) parcel build index.html may throw error as "@parcel/namer-default: Target "main" declares an output file path of "index.js" which does not match the compiled bundle type "html"."
+In package.json file replace "main": "index.js", with "source": "src/index.html". Then type "parcel build index.html" for buid.
 
 PUSHING TO GITHUB - 
 login into github Acc, click +, fill the requirements and create repository. Follow the instructions to push an existing repository from the command line. copy and paste the 3 lines in the terminal. 
