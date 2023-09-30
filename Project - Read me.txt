@@ -248,6 +248,10 @@ click options, edit site name, choose whatever domain you want. once build, you 
 - Now whenever you make changes in the code, commit it, push it to github, and you can see in the netlify, under the deploys section that there was a building. you can also see the latest commit comment. 
 Sometimes deploy fails, you can see the deploy log for reasons. 
 
+ISSUE - "parcel build index.html" - command not found. (i had another branch called "main" in git and netlify was taking the code from master branch. I had to configure the production settings and change it to "main" branch. 
+
+
+
 
 
 
